@@ -1,0 +1,352 @@
+/* Curate – v22.6 unified CSS
+   Cleaned with overlay conflicts removed
+-------------------------------------------------- */
+
+/* ========== 1. Reset & Base ========== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFFFFF;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, Arial, sans-serif;
+  color: #000;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== 2. Header ========== */
+
+.header {
+  width: 100%;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 9px;
+  background: #FFFFFF;
+}
+
+.header__logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.header__menu {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header__logout {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* ========== 3. Tabs ========== */
+
+.tabs {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 9px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.tabs__inner {
+  display: flex;
+  width: 100%;
+}
+
+.tab {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  color: #000000;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0;
+  border-top: 1px solid #B3B3B3;
+  border-bottom: 1px solid #B3B3B3;
+  border-left: 1px solid #B3B3B3;
+  border-right: 0;
+  cursor: pointer;
+}
+
+.tab:first-child {
+  border-left-color: transparent;
+}
+
+.tab:last-child {
+  border-right: 1px solid #B3B3B3;
+}
+
+.tab--active {
+  background: #000000;
+  color: #FFFFFF;
+  border-top-color: #000000;
+  border-bottom-color: #000000;
+  font-weight: 600;
+}
+
+/* ========== 4. Editor (Grey Panel Area) ========== */
+
+.editor {
+  position: relative;
+  width: 1200px;
+  height: 260px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+
+.editor__sidebar {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 4;
+}
+
+.editor__sidebar-btn {
+  width: 188px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid #B3B3B3;
+  border-radius: 4px;
+  background: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.editor__sidebar-btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Grey panel + dotted panel */
+
+.editor__panel {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 1198px;
+  height: 260px;
+  background: #F2F2F2;
+  border: 1px solid #BFBFBF;
+  border-radius: 4px;
+}
+
+.editor__placeholder {
+  position: absolute;
+  left: 212px;
+  right: 10px;
+  top: 9px;
+  bottom: 9px;
+  border: 1px dotted #B3B3B3;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+/* ========== 5. Stage (Buttons + Viewer + Footer) ========== */
+
+.stage {
+  position: relative;
+  margin-top: 14px;
+  width: 1200px;
+}
+
+/* Controls row (HANG / CUSTOMISE) */
+
+.stage__controls {
+  display: flex;
+  gap: 17px;
+  margin-left: 10px;
+  height: 32px;
+  margin-top: 14px;
+  padding-top: 0;
+}
+
+.stage__btn {
+  width: 188px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid #B3B3B3;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stage__btn:hover {
+  background: #F5F5F5;
+}
+
+/* Viewer */
+
+.stage__viewer {
+  position: absolute;
+  top: 0;
+  left: 522px;
+  width: 666px;
+  height: 366px;
+  overflow: hidden;
+}
+
+.stage__viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer */
+
+.stage__footer {
+  position: absolute;
+  top: 394px;
+  left: 0;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.stage__footer-btn {
+  width: 335px;
+  height: 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  background: #FFFFFF;
+  border: 1px solid #BFBFBF;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stage__viewer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== 6. Stage Mode Container (Overlay Injection Point) ========== */
+
+.stage__mode {
+  position: absolute;
+  top: 32px;
+  left: 10px;
+  width: 520px;
+  min-height: 300px;
+  z-index: 5;
+}
+
+#stageMode {
+  top: 32px !important;
+}
+
+/* ========== 7. Wall Button Stacks - Shared UI Element ========== */
+
+.wall-stacks {
+  position: absolute;
+  top: 62px;  /* Align with top of WALL A dimension field */
+  left: 445px;  /* Calculated: viewer at 522px, minus 28px gap, minus 18px M stack, minus 13px gap, minus 18px A stack = 445px */
+  display: flex;
+  gap: 13px;
+  z-index: 6;
+}
+
+.wall-stacks .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wall-stacks .stack button {
+  width: 18px;
+  height: 18px;
+  background: #FFFFFF;
+  border: 1px solid #B3B3B3;
+  border-radius: 0;  /* No rounding */
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  color: #000000;
+}
+
+.wall-stacks .stack button:hover {
+  background: #F5F5F5;
+  border-color: #999999;
+}
+
+.wall-stacks .stack button:active,
+.wall-stacks .stack button.active {
+  background: #3B82F6;
+  border-color: #3B82F6;
+  color: #FFFFFF;
+  font-weight: 600;
+}
