@@ -1,4 +1,5 @@
-// Complete loader.js with overlay injection system
+// GitHub Assets Base URL
+const GITHUB_ASSETS_URL = 'https://exhibbit.github.io/gallery-curate-assets';// Complete loader.js with overlay injection system
 
 // Track current mode
 let currentMode = null;
@@ -18,10 +19,10 @@ async function loadHang() {
     removeOverlayCSS();
     
     // Load hang.css
-    loadCSS('overlays/hang.css', 'hang-css');
+    loadCSS(`${GITHUB_ASSETS_URL}/overlays/hang.css`, 'hang-css');
     
     // Fetch hang.html
-    const response = await fetch('overlays/hang.html');
+    fetch(`${GITHUB_ASSETS_URL}/overlays/hang.html`)
     const html = await response.text();
     
     // Inject the HTML
@@ -57,10 +58,10 @@ async function loadCustomise() {
     removeOverlayCSS();
     
     // Load customise.css
-    loadCSS('overlays/customise.css', 'customise-css');
+    loadCSS(`${GITHUB_ASSETS_URL}/overlays/customise.css`, 'customise-css');
     
     // Fetch customise.html
-    const response = await fetch('overlays/customise.html');
+    const response = await fetch(`${GITHUB_ASSETS_URL}/overlays/customise.html`);
     const html = await response.text();
     
     // Inject the HTML
