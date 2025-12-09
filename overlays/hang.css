@@ -1,0 +1,123 @@
+/* hang.css - Complete styling for HANG overlay (Wall stacks now in main page) */
+
+/* Main overlay container */
+.hang-overlay {
+  width: 100%;
+  max-width: 520px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========== HEADER ROW ========== */
+.hang-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  margin-top: 16px;  /* 16px below CUSTOMISE button */
+  margin-bottom: 10px;
+  margin-left: 205px;
+  position: relative;
+}
+
+/* Meta section (Wall label + dimensions) */
+.hang-meta {
+  display: flex;
+  align-items: center;
+  gap: 0;  /* No gap - they should touch */
+}
+
+/* Wall label button */
+.hang-wall-label {
+  width: 44px;
+  height: 18px;
+  background: #3B82F6;
+  color: #FFFFFF;
+  border: 1px solid #3B82F6;
+  border-radius: 0;  /* No rounding */
+  font-size: 10px;  /* Reduced from 11px to 10px to match dimensions field */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Wall dimensions display */
+.hang-wall-dims {
+  width: 144px;
+  height: 18px;
+  padding: 0 8px;
+  background: #FFFFFF;
+  border: 1px solid #B3B3B3;
+  border-left: none;  /* Remove left border so it joins with WALL A */
+  border-radius: 0;  /* No rounding */
+  font-size: 10px;  /* Reduced from 11px to 10px */
+  font-weight: 400;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Icons section */
+.hang-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 220px;
+  top: -45px;  /* Adjusted to -44px to perfectly center on CUSTOMISE button (button is 32px tall, icon is 28px, so offset should center them) */
+}
+
+.icon-btn {
+  height: 28px;  /* Match HANG/CUSTOMISE button height */
+  background: #FFFFFF;
+  border: 1px solid #B3B3B3;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon-btn:first-child {
+  width: 28px;  /* Eye icon - square, matching button height */
+}
+
+.icon-btn:last-child {
+  width: 28px;  /* Measurement icon - also square */
+}
+
+.icon-btn:hover {
+  background: #F5F5F5;
+}
+
+.icon-btn img {
+  width: 18px;  /* Icon size inside button */
+  height: 18px;
+  display: block;
+}
+
+/* ========== BODY (Floor Plan) ========== */
+.hang-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  margin-left: 0;  /* Remove left margin so plan doesn't shift right */
+}
+
+/* Floor plan image */
+.hang-plan {
+  width: 360px;
+  height: 270px;
+  display: block;
+  border: none;  /* Remove border */
+  background: #FFFFFF;
+  object-fit: cover;  /* Crop/zoom to fill space */
+  object-position: -3px center;  /* Reduced shift from -5px to -3px for less zoom */
+  transform: scale(1.05);  /* Reduced zoom from 1.08 to 1.05 */
+  transform-origin: left center;  /* Scale from left edge */
+}
